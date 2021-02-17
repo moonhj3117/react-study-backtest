@@ -42,7 +42,7 @@ export class Backtest {
 
   @ManyToMany((type) => Asset)
   @JoinTable({
-    name: 'backtests_stocks',
+    name: 'backtests_assets',
     joinColumn: {
       name: 'backtest_id',
       referencedColumnName: 'id',

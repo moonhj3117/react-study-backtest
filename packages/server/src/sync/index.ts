@@ -11,9 +11,11 @@ const readFile = util.promisify(fs.readFile);
 const emptyImagedir = path.join(__dirname, "CALF.png");
 async function hash(){
     const result = await readFile(emptyImagedir, 'hex');
+    console.log(result);
+    
 }
 
-
+hash();
 
 createConnection().then((connection) => {
     const syncbot = new Syncbot()
