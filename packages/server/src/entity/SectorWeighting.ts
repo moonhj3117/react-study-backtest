@@ -5,24 +5,24 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm'
-import { Symbol } from './Symbol'
+import { Asset } from './Asset';
 
 @Entity({
   name: 'sector_weigthings',
 })
 export class SectorWeighting {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
-  @ManyToOne((type) => Symbol, { cascade: true })
+  @ManyToOne((type) => Asset, { cascade: true })
   @JoinColumn({
-    name: 'stock_id',
+    name: 'asset_id',
   })
-  stock: Symbol
+  asset: Asset;
 
   @Column()
-  sector: string
+  sector: string;
 
   @Column({ type: 'double' })
-  percentage: number
+  percentage: number;
 }

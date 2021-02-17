@@ -6,46 +6,46 @@ import {
   JoinColumn,
   ManyToOne,
 } from 'typeorm'
-import { Symbol } from './Symbol'
+import { Asset } from './Asset';
 
 @Entity({
   name: 'historical_prices',
 })
 export class HistoricalPrice {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column()
-  stock_id: number
+  asset_id: number;
 
   @Column({
     type: 'varchar',
     length: 10,
   })
-  type: string
+  type: string;
 
   @Column({ type: 'timestamp' })
-  date: Date
+  date: Date;
 
   @Column({ type: 'double' })
-  high: number
+  high: number;
 
   @Column({ type: 'double' })
-  low: number
+  low: number;
 
   @Column({ type: 'double' })
-  open: number
+  open: number;
 
   @Column({ type: 'double' })
-  close: number
+  close: number;
 
   @Column({ type: 'double' })
-  adjusted_close: number
+  adjusted_close: number;
 
   @Column({ type: 'double' })
-  volume: number
+  volume: number;
 
-  @ManyToOne((type) => Symbol, { cascade: true })
-  @JoinColumn({ name: 'stock_id' })
-  symbol: Symbol
+  @ManyToOne((type) => Asset, { cascade: true })
+  @JoinColumn({ name: 'asset_id' })
+  asset: Asset;
 }

@@ -1,10 +1,10 @@
 import {Entity, PrimaryGeneratedColumn, Column, Index} from 'typeorm'
 
 @Entity({
-    name: 'symbol_type',
+    name: 'asset_type',
 })
 
-export class SymbolType{
+export class Asset_Type{
     @PrimaryGeneratedColumn()
     id: number;
     @Index()

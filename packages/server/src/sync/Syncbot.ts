@@ -6,7 +6,7 @@ import { getSectorWeightings } from '../finance-api/getSectorWeightings';
 import { getHistoricalPrice } from '../finance-api/getHistoricalPrice';
 import { groupByMonth } from './lib/groupByMonth';
 import { HistoricalPrice } from '../entity/HistoricalPrice';
-import { Symbol} from '../entity/Symbol';
+import { Asset } from '../entity/Asset';
 
 const tickersDir = path.resolve(__dirname, 'tickers');
 
@@ -28,12 +28,12 @@ class Syncbot {
   async syncStock(ticker: string) {
     const profile = await getStockProfile(ticker)
     const historicalPrices = await getHistoricalPrice(ticker)
-    
+
     const sectorWeightings = profile.sector
       ? await getSectorWeightings(ticker)
       : null;
     const monthlyHistorycalPrices = groupByMonth(historicalPrices);
-    const symbol = new Symbol()
+    const asset = new Asset();
   }
 
   async syncStocks() {

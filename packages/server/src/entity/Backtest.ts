@@ -9,7 +9,7 @@ import {
   ManyToMany,
   JoinTable,
 } from 'typeorm'
-import { Symbol } from './Symbol'
+import { Asset } from './Asset';
 import { User } from './User'
 
 @Entity({
@@ -17,30 +17,30 @@ import { User } from './User'
 })
 export class Backtest {
   @PrimaryGeneratedColumn()
-  id: number
+  id: number;
 
   @Column()
-  title: string
+  title: string;
 
   @Column({ type: 'text' })
-  body: string
+  body: string;
 
   @Index()
   @CreateDateColumn({ type: 'timestamp' })
-  created_at: Date
+  created_at: Date;
 
   @Column({ type: 'text' })
-  options: string
+  options: string;
 
   @Index()
   @Column()
-  is_private: boolean
+  is_private: boolean;
 
   @ManyToOne((type) => User)
   @JoinColumn({ name: 'user_id' })
-  user: User
+  user: User;
 
-  @ManyToMany((type) => Symbol)
+  @ManyToMany((type) => Asset)
   @JoinTable({
     name: 'backtests_stocks',
     joinColumn: {
@@ -48,9 +48,9 @@ export class Backtest {
       referencedColumnName: 'id',
     },
     inverseJoinColumn: {
-      name: 'stock_id',
+      name: 'asset_id',
       referencedColumnName: 'id',
     },
   })
-  stocks: Symbol[]
+  asset: Asset[];
 }
