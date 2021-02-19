@@ -1,55 +1,8 @@
 VV	Largecap ETF Vanguard
 VTI	Total Stock Market ETF Vanguard
-GLD	Gold SPDR
-SPY	S&P 500 SPDR
-ICLN	Global Clean Energy Ishares ETF
 MSFT	Microsoft Corp
 AAPL	Apple Inc
 TSLA	Tesla Inc
 AMZN	Amazon.com Inc
 FOXF	Fox Factory Cp
-FPA	Asia Pacific Ex-Japan Alphadex Fund FT
-FPAY	Flexshopper Inc
-FPRX	Five Prime Thera
-FPXE	FT Ipox Europe Equity Opportunities ETF
-FPXI	FT Intl Equity Opportunities ETF
-FRAF	Franklin Finl Svcs Corp
-FRAN	Francesca's Holdings
-FRBA	First Bank
-FRBK	Republic First Bcp
-FREE	Whole Earth Brands Inc
-FREEW	Whole Earth Brands Inc WT
-FREQ	Frequency Therapeutics Inc
-FRG	Franchise Group Inc
-FRGAP	Franchise Group Inc 7.50% Series A
-FRGI	Fiesta Restaurant Gp
-FRHC	Freedom Holding Corp
-FRLN	Freeline Therapeutics Holdings Plc Adss
-FRME	First Merchants Corp
-FROG	Jfrog Ltd
-FRPH	Frp Holdings Inc
-FRPT	Freshpet Inc CS
-FRSX	Foresight Autonomous Holdings Ltd ADR
-FRTA	Forterra Inc
-FSBW	FS Bancorp Inc
-FSDC	FS Development Corp Cl A
-FSEA	First Seacoast Bancorp
-FSFG	First Savings Financ
-FSLR	First Solar Inc
-FSRV	Finserv Acquisition Corp Cl A
-FSRVU	Finserv Acquisition Corp
-FSRVW	Finserv Acquisition Corp WT
-FSTR	Foster L B Company
-FSTX	F-Star Therapeutics Inc
-FSV	Firstsrvce Sub VT Sh
-FSZ	Switzerland Alphadex Fund FT
-FTA	Largecap Value Alphadex Fund FT
-FTAG	Indxx Global Agriculture ETF FT
-FTC	Largecap Growth Alphadex Fund FT
-FTCS	Capital Strength ETF FT
-FTCVU	Fintech Acquisition Corp. V
-FTDR	Frontdoor Inc
-FTEK	Fuel Tech Inc
-FTFT	Future Fintech Group Inc
-FTGC	Global Tactical Commodity Strategy Fund FT
-FTHI	High Income ETF FT
+AMBA	Ambarella Inc

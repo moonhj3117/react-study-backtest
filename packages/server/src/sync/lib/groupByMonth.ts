@@ -10,7 +10,8 @@ type MonthlyHistorycalPrice = {
     low: number,
     open : number,
     close: number,
-    adjstedClose: number
+    adjstedClose: number,
+    volume: number,
 }
 export function groupByMonth(historicalPrices: RawHistorycalPrice[]){
     return historicalPrices.reduce((acc, current) => {
@@ -18,6 +19,7 @@ export function groupByMonth(historicalPrices: RawHistorycalPrice[]){
         const baseDate = format(date, 'yyyy-MM')
         const priceInfo = acc.find( (info) => info.baseDate === baseDate);
 
+       
         if(!priceInfo){
             acc.push({
                 baseDate,
@@ -26,12 +28,14 @@ export function groupByMonth(historicalPrices: RawHistorycalPrice[]){
             closeDate: current.date,
             high: current.high,
             low: current.low,
-            open: current.open
+            open: current.open,
+            volume: current.volume,
             })
         }else{
             priceInfo.high = Math.max(priceInfo.high, current.high)
             priceInfo.low = Math.max(priceInfo.low, current.low)
             priceInfo.open = current.open;
+            priceInfo.volume += current.volume
         }
         return acc
     }, [] as MonthlyHistorycalPrice[])

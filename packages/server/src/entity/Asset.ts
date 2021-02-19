@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToOne } from 'typeorm'
 import { AssetMeta } from './AssetMeta'
-import { Asset_Type } from './AssetType'
+import { AssetType } from './AssetType'
 
 @Entity({
   name: 'asset',
@@ -24,7 +24,7 @@ export class Asset {
   })
   description: string;
 
-  @Column()
+  @Column({ nullable: true})
   sector: string;
 
   @Column({
@@ -35,17 +35,20 @@ export class Asset {
   @Column({
     nullable: true,
   })
-  image: string;
+  image: string; //
 
-  @Column()
+  @Column({
+    nullable: true,
+  })
   is_etf: boolean;
 
   @OneToOne((type) => AssetMeta, (AssetMeta) => AssetMeta.asset)
-  asset_meta: AssetMeta;
+  asset_meta!: AssetMeta;
 
-  @ManyToOne((type) => Asset_Type, { cascade: true })
+  @ManyToOne((type) => AssetType, { cascade: true })
   @JoinColumn({
     name: 'asset_type_id',
   })
-  asset_type: Asset_Type;
+  assetype!: AssetType;
+  
 }
